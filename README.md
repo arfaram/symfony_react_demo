@@ -1,72 +1,37 @@
-Symfony Standard Edition
-========================
+## Quickly access to the application:
 
-Welcome to the Symfony Standard Edition - a fully-functional Symfony
-application that you can use as the skeleton for your new applications.
+1/Start the php server
+	bin/console server:start
 
-For details on how to download and get started with Symfony, see the
-[Installation][1] chapter of the Symfony Documentation.
+2/connect to 
+	http://localhost:8000
 
-What's inside?
---------------
+3/GoTo 
+	http://localhost:8000/cologne
 
-The Symfony Standard Edition is configured with the following defaults:
+Note: The REST API endpoint used here is hosted at http://api.myjson.com/bins/xs9xn . More infos in: `src/Symfony/ReactBundle/Resources/public/js/component/cologne.js` where you can change to your endpoint and modify the template in the render() function.
 
-  * An AppBundle you can use to start coding;
 
-  * Twig as the only configured template engine;
+Note: the finally js file used here is located in `web/dist/build.js` and configured in the base twig template.
 
-  * Doctrine ORM/DBAL;
 
-  * Swiftmailer;
+## Project Informations	
 
-  * Annotations enabled for everything.
+- We are using here:
+	- webpack : see `package.json` and `webpack.config.json` and `webpack.dev-server.js`(launch dev server)
 
-It comes pre-configured with the following bundles:
+- launch dev Server:
+	`npm run start`
+- to build the prod js script in `web/dist`
+	`npm run build`
 
-  * **FrameworkBundle** - The core Symfony framework bundle
+### working with browser-sync-webpack-plugin:
+	See configuration in `webpack.config.json`
+	this will launch the browser with: http://localhost:3001 and connect to symfony instance when runing using port:8001
 
-  * [**SensioFrameworkExtraBundle**][6] - Adds several enhancements, including
-    template and routing annotation capability
 
-  * [**DoctrineBundle**][7] - Adds support for the Doctrine ORM
-
-  * [**TwigBundle**][8] - Adds support for the Twig templating engine
-
-  * [**SecurityBundle**][9] - Adds security by integrating Symfony's security
-    component
-
-  * [**SwiftmailerBundle**][10] - Adds support for Swiftmailer, a library for
-    sending emails
-
-  * [**MonologBundle**][11] - Adds support for Monolog, a logging library
-
-  * **WebProfilerBundle** (in dev/test env) - Adds profiling functionality and
-    the web debug toolbar
-
-  * **SensioDistributionBundle** (in dev/test env) - Adds functionality for
-    configuring and working with Symfony distributions
-
-  * [**SensioGeneratorBundle**][13] (in dev env) - Adds code generation
-    capabilities
-
-  * [**WebServerBundle**][14] (in dev env) - Adds commands for running applications
-    using the PHP built-in web server
-
-  * **DebugBundle** (in dev/test env) - Adds Debug and VarDumper component
-    integration
-
-All libraries and bundles included in the Symfony Standard Edition are
-released under the MIT or BSD license.
-
-Enjoy!
-
-[1]:  https://symfony.com/doc/3.3/setup.html
-[6]:  https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/index.html
-[7]:  https://symfony.com/doc/3.3/doctrine.html
-[8]:  https://symfony.com/doc/3.3/templating.html
-[9]:  https://symfony.com/doc/3.3/security.html
-[10]: https://symfony.com/doc/3.3/email.html
-[11]: https://symfony.com/doc/3.3/logging.html
-[13]: https://symfony.com/doc/current/bundles/SensioGeneratorBundle/index.html
-[14]: https://symfony.com/doc/current/setup/built_in_web_server.html
+http://localhost:8001 -> symfony server launching with : bin/console server:start
+http://localhost:3001 -> launched with webpack and compile component at saving time
+http://localhost:3002 -> the BrowserSync instance with more information
+http://localhost:3000/static/bundle.js  : the dev js script (npm run start)
+http://localhost:8001/web/dist/bundle.js : the prod js script (npm run build)
