@@ -1,0 +1,22 @@
+symfony_react:
+    resource: "@SymfonyReactBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+#check doc configuration: https://okonuskan.gitbooks.io/tutorial-symfony2-webpack-and-react/content/chapter1/article2.html
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+NelmioApiDocBundle:
+    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+    prefix:   /api/doc
+tasks:
+    resource: "@SymfonyReactBundle/Controller/TaskController.php"
+    type:     rest
+    prefix: /api
+#fallback:
+    #pattern: /{url}
+    #defaults: { _controller: AppBundle:Default:index, url: null }
+    #requirements:
+        #url: .*
+

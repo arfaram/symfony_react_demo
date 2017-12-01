@@ -1,0 +1,11 @@
+/vendor/
+/node_modules/
+/var/cache/
+/var/logs/
+/var/sessions/
+/app/config/parameters.yml
+/var/bootstrap.php.cache
+/web/bundles/
+composer.lock
+.web-server-pid
+package-lock.json
