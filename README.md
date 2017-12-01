@@ -25,13 +25,13 @@ Note: the finally js file used here is located in `web/dist/build.js` and config
 - to build the prod js script in `web/dist`
 	`npm run build`
 
-### working with browser-sync-webpack-plugin:
+###(optional) working with browser-sync-webpack-plugin:
 	See configuration in `webpack.config.json`
 	this will launch the browser with: http://localhost:3001 and connect to symfony instance when runing using port:8001
 
 
-http://localhost:8001 -> symfony server launching with : bin/console server:start
-http://localhost:3001 -> launched with webpack and compile component at saving time
-http://localhost:3002 -> the BrowserSync instance with more information
-http://localhost:3000/static/bundle.js  : the dev js script (npm run start)
-http://localhost:8001/web/dist/bundle.js : the prod js script (npm run build)
+- http://localhost:8001 -> symfony server launching with : bin/console server:start
+- http://localhost:3001 -> launched with webpack and compile component at saving time
+- http://localhost:3002 -> the BrowserSync instance with more information
+- http://localhost:3000/static/bundle.js  : the dev js script (npm run start)
+- http://localhost:8001/web/dist/bundle.js : the prod js script (npm run build)
