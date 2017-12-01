@@ -35,3 +35,10 @@ Note: the finally js file used here is located in `web/dist/build.js` and config
 - http://localhost:3002 -> the BrowserSync instance with more information
 - http://localhost:3000/static/bundle.js  : the dev js script (npm run start)
 - http://localhost:8001/web/dist/bundle.js : the prod js script (npm run build)
+
+
+Note:
+
+In dev mode we are running webpackserver and using `http://localhost:3001` for react script to refresh quickly the browser.
+
+When runing the symfony php server we use the `http://localhost:8000` to work with symfony but we stil use the JS refreshed by webpackserver. In prod mode we use then the `web/dist/bundle.js` . More information in `src/Symfony/ReactBundle/Resources/views/base.html.twig`. The dev JS script in this demo is using dist/bundle.js
