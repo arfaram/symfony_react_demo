@@ -27,7 +27,7 @@ var config = {
 
     ],
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.jsx?$/,
                 include: path.join(__dirname, 'src/Symfony/ReactBundle/Resources/public/js'),
