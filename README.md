@@ -1,23 +1,25 @@
 ## Quickly access to the application:
 
-1/Start the php server
-	bin/console server:start
+1. `composer update`
 
-2/connect to 
-	http://localhost:8000
+2. Start the PHP's built-in Web Server
+```
+php bin/console server:start 0.0.0.0.:8000
+```
 
-3/GoTo 
-	http://localhost:8000/cologne
+3. Connect to `http://localhost:8000`
 
-Note: The REST API endpoint used here is hosted at http://api.myjson.com/bins/xs9xn . More infos in: `src/Symfony/ReactBundle/Resources/public/js/component/cologne.js` where you can change to your endpoint and modify the template in the render() function.
+4. goto `http://localhost:8000/cologne`
+
+Notes:
+- The REST API endpoints which have been used here are hosted at http://api.myjson.com/bins/xs9xn(blog posts) and http://api.myjson.com/bins/97w3h(Products) . More infos in: `src/Symfony/ReactBundle/Resources/public/js/component/cologne.js` where you can switch to your REST endpoint and modify the template in the render() function.
+- The prod JavaScript file used here is located in `web/dist/build.js` and configured in the `base.html.twig` template.
+- The dev JavaScript is delivered from webpack dev server  
 
 
-Note: the finally js file used here is located in `web/dist/build.js` and configured in the base twig template.
+## Project Informations
 
-
-## Project Informations	
-
-- We are using here:
+- We use here:
 	- webpack : see `package.json` and `webpack.config.json` and `webpack.dev-server.js`(launch dev server)
 
 - launch dev Server:
@@ -25,20 +27,14 @@ Note: the finally js file used here is located in `web/dist/build.js` and config
 - to build the prod js script in `web/dist`
 	`npm run build`
 
-###(optional) working with browser-sync-webpack-plugin:
-	See configuration in `webpack.config.json`
-	this will launch the browser with: http://localhost:3001 and connect to symfony instance when runing using port:8001
+### (optional) working with browser-sync-webpack-plugin:
 
+- See configuration in `webpack.config.json`
+- It will launch your default browser with: http://localhost:3001 and proxying connection to symfony application running on port:8000
 
-- http://localhost:8001 -> symfony server launching with : bin/console server:start
+### Ports Information
+- http://localhost:8000 -> PHP's built-in Web Server
 - http://localhost:3001 -> launched with webpack and compile component at saving time
-- http://localhost:3002 -> the BrowserSync instance with more information
-- http://localhost:3000/static/bundle.js  : the dev js script (npm run start)
-- http://localhost:8001/web/dist/bundle.js : the prod js script (npm run build)
-
-
-Note:
-
-In dev mode we are running webpackserver and using `http://localhost:3001` for react script to refresh quickly the browser.
-
-When runing the symfony php server we use the `http://localhost:8000` to work with symfony but we stil use the JS refreshed by webpackserver. In prod mode we use then the `web/dist/bundle.js` . More information in `src/Symfony/ReactBundle/Resources/views/base.html.twig`. The dev JS script in this demo is using dist/bundle.js
+- http://localhost:3002 -> BrowserSync
+- http://localhost:3000/static/bundle.js -> Dev JS (npm run start)
+- http://localhost:8000/web/dist/bundle.js -> Prod JS (npm run build)
