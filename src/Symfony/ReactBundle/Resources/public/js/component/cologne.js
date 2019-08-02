@@ -8,7 +8,8 @@ class CologneApp extends Component {
     this.state = {
 	products: [],
 	host:'http://api.myjson.com',
-	dataRoute: '/bins/xs9xn',
+	//dataRoute: '/bins/1b7chp',  // Trips
+  dataRoute: '/bins/97w3h', // Products
     }
   }
 
@@ -62,7 +63,7 @@ componentDidMount(){
 
 		<p>{ product.title }</p>
 
-		<img style={{width:150}} src={ product.main_image }  />
+		<img style={{"max-width": "50%"}} src={ product.main_image }  />
 
               <button className="snipcart-add-item"
                 data-item-url= { `${this.state.host}${product.uri}`}
@@ -83,6 +84,3 @@ componentDidMount(){
 }
 
 export default CologneApp;
-
-
-
