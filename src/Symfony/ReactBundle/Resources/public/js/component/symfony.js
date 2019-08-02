@@ -38,7 +38,8 @@ class SymfonyApp extends Component {
 
         this.state = {
             tasks: [],
-            dataRoute: 'http://localhost:8000/api/tasks'
+            //dataRoute: 'http://localhost:8000/api/tasks'
+            dataRoute: 'https://api.myjson.com/bins/19mcsl'
         }
     }
 
