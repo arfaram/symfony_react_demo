@@ -38,7 +38,7 @@ class SymfonyApp extends Component {
 
         this.state = {
             tasks: [],
-            dataRoute: 'http://www.symfony_react.dev/api/tasks'
+            dataRoute: 'http://localhost:8000/api/tasks'
         }
     }
 
@@ -91,6 +91,3 @@ class SymfonyApp extends Component {
 }
 
 export default SymfonyApp;
-
-
-
