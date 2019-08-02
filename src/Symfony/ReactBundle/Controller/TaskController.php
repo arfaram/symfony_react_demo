@@ -19,7 +19,7 @@ class TaskController extends FOSRestController
      *
      * @return Task
      */
-    // curl -X "GET" http://localhost:8001/api/tasks/2.json
+    // curl -X "GET" http://localhost:8000/api/tasks/2.json
     public function getTaskAction(Task $task)
     {
         return $task;
@@ -29,7 +29,7 @@ class TaskController extends FOSRestController
      * @ApiDoc()
      * @return Task[]
      */
-    //curl -X "GET"  http://localhost:8001/api/tasks.json 
+    //curl -X "GET"  http://localhost:8000/api/tasks.json
     public function getTasksAction()
     {
         return $this->getDoctrine()->getRepository('SymfonyReactBundle:Task')->findAll();
@@ -42,7 +42,7 @@ class TaskController extends FOSRestController
      *
      * @return Task
      */
-    //curl -X "POST" -d "text=do\ something&user=john\ doe"  http://localhost:8001/api/tasks.json
+    //curl -X "POST" -d "text=do\ something&user=john\ doe"  http://localhost:8000/api/tasks.json
     public function postTasksAction(Request $request)
     {
         $task = new Task();
@@ -76,7 +76,7 @@ class TaskController extends FOSRestController
      *
      * @return Response
      */
-    //curl -X "DELETE"  http://localhost:8001/api/tasks/3.json
+    //curl -X "DELETE"  http://localhost:8000/api/tasks/3.json
     public function deleteTaskAction(Task $task)
     {
         $this->getDoctrine()->getManager()->remove($task);

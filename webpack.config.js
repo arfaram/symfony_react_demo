@@ -22,7 +22,7 @@ var config = {
     	new BrowserSyncPlugin({
 		host: '127.0.0.1',
 		port: 3000,
-		proxy: 'http://www.symfony_react.dev'
+		proxy: 'http://localhost:8000'
     	})
 
     ],
