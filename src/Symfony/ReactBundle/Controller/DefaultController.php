@@ -15,16 +15,8 @@ class DefaultController extends Controller
     public function indexAction(Request $request)
     {
 
-	return $this->render('SymfonyReactBundle:app:index.html.twig');
+	    return $this->render('SymfonyReactBundle:app:index.html.twig');
 
-        return new Response(
-            'Home page 
-		<ul>
-			<li><a href="/react">react</a></li>
-			<li><a href="/cologne">cologne</a></li>
-		</ul>
-	',Response::HTTP_OK
-        );
     }
 
     /**
@@ -32,7 +24,6 @@ class DefaultController extends Controller
      */
     public function reactAction(Request $request)
     {
-
         return $this->render('SymfonyReactBundle:app:react.html.twig');
 
     }

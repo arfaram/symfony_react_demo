@@ -7,15 +7,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class CologneController extends Controller
+class DataFromCmsRestAPIController extends Controller
 {
     /**
-     * @Route("/cologne", name="cologne")
+     * @Route("/rest/api/{source}", name="cms_source")
      */
-    public function indexAction(Request $request)
+    public function blogAction(Request $request, string $source = 'blog')
     {
-	 return $this->render('SymfonyReactBundle:app:cologne.html.twig');
+	 return $this->render("SymfonyReactBundle:app:$source.html.twig");
     }
-
 
 }

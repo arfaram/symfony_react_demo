@@ -1,10 +1,16 @@
 {% extends 'SymfonyReactBundle::base.html.twig' %}
 
-{% block body %}
+{% block content %}
 
-	<h2>Home page</h2>
+	<h3>Symfony / FOSRest / Doctrine / Nelmio ApiDoc</h3>
+		<ol>
+			<li><a href="/api/doc">Try the API</a> (POST example: user=me&text=message)</li>
+			<li><a href="/react">Get the Data with react</a></li>
+		</ol>
+	
+	<h3>eZ REST API Content with react </h3>
 		<ul>
-			<li><a href="/react">react</a></li>
-			<li><a href="/cologne">cologne</a></li>
+			<li><a href="{{path('cms_source')}}/blog">Blog</a></li>
+			<li><a href="{{path('cms_source')}}/products">Products</a></li>
 		</ul>
 {% endblock %}

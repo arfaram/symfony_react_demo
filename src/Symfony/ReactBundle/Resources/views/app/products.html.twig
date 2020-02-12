@@ -1,0 +1,34 @@
+{% extends 'SymfonyReactBundle::base.html.twig' %}
+
+{% block content %}
+
+    <section class="bg-light" id="portfolio">
+            <div class="col-lg-12 text-center" style="background-color:#ff883e;color:#ffffff;">
+                    <h2 class="section-heading">React App<br />
+                    using the eZPlatform REST API
+                    </h3>
+                </div>
+
+        <div class="container">
+            <div class="row">
+            
+                <div id="products"></div>
+
+            </div>
+        </div>
+    </section>
+
+    {% include 'SymfonyReactBundle:app:code.html.twig' %}
+
+    <section class="bg-light">
+        <div class="col-lg-12">
+            <div class="container">
+            <h3>Data</h3>
+                <div class="row">
+                    <a href="http://api.myjson.com/bins/1ago94">JSON</a>
+                </div>
+            </div> 
+        </div>
+    </section>
+    
+{% endblock %}

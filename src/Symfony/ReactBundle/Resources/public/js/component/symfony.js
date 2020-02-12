@@ -38,8 +38,8 @@ class SymfonyApp extends Component {
 
         this.state = {
             tasks: [],
-            //dataRoute: 'http://localhost:8000/api/tasks'
-            dataRoute: 'https://api.myjson.com/bins/19mcsl'
+            dataRoute: 'http://localhost:8000/api/tasks'
+            //dataRoute: 'https://api.myjson.com/bins/19mcsl'
         }
     }
 
@@ -66,28 +66,31 @@ class SymfonyApp extends Component {
 
     render() {
         return (
-            <div className="App">
-                <div className="App-header">
-                    <h2>React based REST web application with Symfony2 </h2>
-                </div>
+     
+                <table class="table-dark" style={{width: "100%"}}>
+                <thead>
+                    <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">User</th>
+                    <th scope="col">Message</th>
+                    </tr>
+                </thead>
+                <tbody>
 
-                <div className="tasks">
+                {this.state.tasks.map((task) =>
 
-                    {this.state.tasks.map((task) =>
-                        <div className="task" key={`task-${task.id}}`}>
-
-
-                    <p>{ task.id }:{ task.user }:{ task.text }</p>
-
-
-                </div>
+                    <tr>
+                    <th scope="row" key={`task-${task.id}}`}>{ task.id }</th>
+                    <td>{ task.user }</td>
+                    <td>{ task.text }</td>
+                    </tr>
+   
                 )}
-
-            </div>
-            < / div >
+                </tbody>
+                </table>
+ 
         );
     }
-
 
 }
 
